@@ -6,8 +6,8 @@ def sort_by_points(player):
 
 
 class Statistics:
-    def __init__(self):
-        reader = PlayerReader()
+    def __init__(self, player_reader):
+        reader = player_reader
 
         self._players = reader.get_players()
 
@@ -34,7 +34,7 @@ class Statistics:
         )
 
         result = []
-        i = 0
+        i = 1
         while i <= how_many:
             result.append(sorted_players[i])
             i += 1
