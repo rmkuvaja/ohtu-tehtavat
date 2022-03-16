@@ -13,12 +13,14 @@ def main():
 
     for player_dict in response:
         if player_dict['nationality'] == nationality:
-            name = player_dict['name']
-            team = player_dict['team']
+            name = f"{player_dict['name']:20}"
+            team = f"{player_dict['team']:5}"
             goals = player_dict['goals']
             assists = player_dict['assists']
+            sum = goals + assists
+            total = str(sum)
             player = Player(
-                 name + "team " + team + "  goals " + str(goals)  + "  assists " + str(assists)
+                 name + team + f"{str(goals):2}" + " + " + f"{str(assists):2}" + " = " + total
             )
             players.append(player)
 
