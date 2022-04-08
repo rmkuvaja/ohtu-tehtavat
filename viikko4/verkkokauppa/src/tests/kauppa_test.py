@@ -102,7 +102,6 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.lisaa_koriin(1)
         self.kauppa.tilimaksu("pekka", "12345")
 
-        # tarkistetaan että tässä vaiheessa viitegeneraattorin metodia uusi on kutsuttu kerran
         self.assertEqual(self.viitegeneraattori_mock.uusi.call_count, 1)
         # varmistetaan, että nyt käytössä 1. viite
         self.pankki_mock.tilisiirto.assert_called_with('pekka', 1, '12345', ANY, ANY)
