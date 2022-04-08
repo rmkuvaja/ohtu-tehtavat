@@ -92,7 +92,6 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.lisaa_koriin(1)
         self.kauppa.tilimaksu("liisa", "54321")
 
-        # varmistetaan, että metodia tilisiirto on kutsuttu
         self.pankki_mock.tilisiirto.assert_called_with('liisa', 42, '54321', '33333-44455', 5)
 
     def test_pyydetaan_uusi_viite_jokaiseen_maksuun(self):
