@@ -71,7 +71,6 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.lisaa_koriin(1)
         self.kauppa.tilimaksu("pekka", "12345")
 
-        # varmistetaan, että metodia tilisiirto on kutsuttu
         self.pankki_mock.tilisiirto.assert_called_with('pekka', 42, '12345', '33333-44455', 10)
 
     def test_ostetaan_2_eri_tuotetta_toinen_loppu_tilimaksu_kutsuu_metodia_tilisiirto_oikeilla_tiedoilla(self):
